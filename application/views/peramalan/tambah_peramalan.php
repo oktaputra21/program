@@ -81,7 +81,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Periode</th>
-                                <th>Product Name</th>
+                                <th>Nama Barang</th>
                                 <th>Result</th>
                                 <th>MAD</th>
                             </tr>
