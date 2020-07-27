@@ -6,7 +6,7 @@
 		<tr>
 			<th>#</th>
             <th>Nama Barang</th>
-            <th>QTY</>
+            <th>QTYY</>
             <th>Tanggal</th>
             <th>Keterangan</th>
 		</tr>
