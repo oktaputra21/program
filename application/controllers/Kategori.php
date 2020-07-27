@@ -110,16 +110,15 @@ class Kategori extends CI_Controller
         }
     }
 
-    public function hapus()
+    public function hapus($id)
     {
-        $kategori_id = $this->input->post('kategori_id');
-        $this->kategori_m->hapus($kategori_id);
+        $this->kategori_m->hapus($id);
 
-        if ($this->db->affected_rows($kategori_id) > 0) {
-            echo "<script>
-            alert('Data berhasil dihapus!');
-            window.location='" . site_url('kategori') . "';
-            </script>";
-        }
+        // if ($this->db->affected_rows($kategori_id) > 0) {
+        //     echo "<script>
+        //     alert('Data berhasil dihapus!');
+        //     window.location='" . site_url('kategori') . "';
+        //     </script>";
+        // }
     }
 }

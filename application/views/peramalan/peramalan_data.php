@@ -39,9 +39,9 @@
                             <td><?= $no++ ?></td>
                             <td><?= $data->nama_barang ?></>
                             <td><?= $data->bulan ?></td>
-                            <td><?= $data->tahun ?></td>
-                            <td><?= $data->hasil ?></td>
-                            <td><?= $data->mad ?></td>
+                            <td class="text-right"><?= $data->tahun ?></td>
+                            <td class="text-right"><?= $data->hasil ?></td>
+                            <td class="text-right"><?= $data->mad ?></td>
 
                             <?php
                             if ($this->session->userdata('role_id') == 1) { ?>

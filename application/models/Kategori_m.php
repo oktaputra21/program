@@ -10,6 +10,7 @@ class Kategori_m extends CI_Model
         if ($id != null) {
             $this->db->where('kategori_id', $id);
         }
+        $this->db->where('deleted_at', null);
         $query = $this->db->get();
         return $query;
     }
@@ -29,7 +30,8 @@ class Kategori_m extends CI_Model
 
     public function hapus($id)
     {
+        $this->db->set('deleted_at', date("Y-m-d H:i:s"));
         $this->db->where('kategori_id', $id);
-        $this->db->delete('kategori');
+        $this->db->update('kategori');
     }
 }

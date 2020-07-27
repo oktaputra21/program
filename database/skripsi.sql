@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 03:25 PM
+-- Generation Time: Jul 27, 2020 at 06:54 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -41,8 +41,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `kategori_id`, `stock`, `harga`) VALUES
-(1, 'Cat Alvitex', 1, 79, 100000),
-(2, 'Semen Gresik', 2, 80, 50000),
+(1, 'Cat Alvitex', 1, 71, 100000),
+(2, 'Semen Gresik', 2, 78, 50000),
 (3, 'Paku Beton', 3, 0, 10000),
 (4, 'Pipa Rucika', 4, 0, 50000);
 
@@ -60,13 +60,6 @@ CREATE TABLE `cart` (
   `total` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `id_barang`, `harga`, `qty`, `total`, `id_user`) VALUES
-(1, 1, 100000, 1, 100000, 1);
 
 -- --------------------------------------------------------
 
@@ -92,7 +85,10 @@ INSERT INTO `detail_transaksi` (`id_detail`, `no_transaksi`, `harga`, `id_barang
 (2, 11, 50000, 2, 16, 800000),
 (3, 12, 100000, 1, 6, 600000),
 (4, 12, 50000, 2, 4, 200000),
-(5, 13, 100000, 1, 1, 100000);
+(5, 13, 100000, 1, 1, 100000),
+(6, 14, 100000, 1, 7, 700000),
+(7, 14, 50000, 2, 2, 100000),
+(8, 15, 100000, 1, 1, 100000);
 
 --
 -- Triggers `detail_transaksi`
@@ -113,18 +109,20 @@ DELIMITER ;
 
 CREATE TABLE `kategori` (
   `kategori_id` int(11) NOT NULL,
-  `nama_kategori` varchar(30) NOT NULL
+  `nama_kategori` varchar(30) NOT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kategori`
 --
 
-INSERT INTO `kategori` (`kategori_id`, `nama_kategori`) VALUES
-(1, 'Cat'),
-(2, 'Semen'),
-(3, 'Paku'),
-(4, 'Pipa');
+INSERT INTO `kategori` (`kategori_id`, `nama_kategori`, `deleted_at`) VALUES
+(1, 'Cat', NULL),
+(2, 'Semen', NULL),
+(3, 'Paku', NULL),
+(4, 'Pipa', NULL),
+(5, 'aa', '2020-07-27 18:07:51');
 
 -- --------------------------------------------------------
 
@@ -146,8 +144,18 @@ CREATE TABLE `peramalan` (
 --
 
 INSERT INTO `peramalan` (`id_peramalan`, `id_barang`, `bulan`, `tahun`, `hasil`, `mad`) VALUES
-(2, 1, 'Agustus', 2020, 9, 7.6666666666667),
-(3, 2, 'Agustus', 2020, 18, 9.3333333333333);
+(5, 1, 'Agustus', 2020, 10, 8.5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `satuan`
+--
+
+CREATE TABLE `satuan` (
+  `id_satuan` int(11) NOT NULL,
+  `nama_satuan` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -194,7 +202,9 @@ CREATE TABLE `transaksi` (
 INSERT INTO `transaksi` (`no_transaksi`, `date`, `total`, `id_user`) VALUES
 (11, '2020-07-18', 1200000, 1),
 (12, '2020-07-18', 800000, 1),
-(13, '2020-07-18', 100000, 1);
+(13, '2020-07-18', 100000, 1),
+(14, '2020-07-27', 800000, 1),
+(15, '2020-07-29', 100000, 1);
 
 -- --------------------------------------------------------
 
@@ -218,8 +228,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `image`, `email`, `no_hp`, `role_id`) VALUES
-(1, 'I Made Suteja Kawinanga', 'admin', 'admin', 'profile-20200718-dc76cff60d.jpg', 'suteja@gmail.com', '0895321927826', 1),
-(3, 'I Kadek Okta Putra', 'okta', '123', 'profile-20200718-fd6df16f05.jpg', 'okta@gmail.com', '0895321927865', 2);
+(1, 'I Kadek Okta Putra', 'admin', 'admin', 'profile-20200718-dc76cff60d.jpg', 'kadekoktaputra21@gmail.com', '0895321927826', 1),
+(3, 'I Made Novan', 'user1', '123', 'profile-20200718-fd6df16f05.jpg', 'made_novan17@gmail.com', '0895321927865', 2);
 
 -- --------------------------------------------------------
 
@@ -280,6 +290,12 @@ ALTER TABLE `peramalan`
   ADD PRIMARY KEY (`id_peramalan`);
 
 --
+-- Indexes for table `satuan`
+--
+ALTER TABLE `satuan`
+  ADD PRIMARY KEY (`id_satuan`);
+
+--
 -- Indexes for table `stock`
 --
 ALTER TABLE `stock`
@@ -321,25 +337,25 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `peramalan`
 --
 ALTER TABLE `peramalan`
-  MODIFY `id_peramalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_peramalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `stock`
@@ -351,7 +367,7 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -37,7 +37,7 @@
                                         <tr>
                                             <td><?= $no++ ?></td>
                                             <td><?= $data->nama_barang ?></>
-                                            <td><?= $data->qty ?></td>
+                                            <td class="text-right"><?= $data->qty ?></td>
                                             <td><?= $data->tanggal ?></td>
                                             <td><?= $data->keterangan ?></td>
 

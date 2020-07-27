@@ -32,15 +32,10 @@
                                             <td><?= $no++ ?></td>
                                             <td><?= $data->nama_kategori ?></td>
                                             <td class="text-center" width="210px">
-                                                <form action="<?= site_url('kategori/hapus') ?>" method="POST">
-                                                    <a href="<?= site_url('kategori/editkategori/' . $data->kategori_id);  ?>" class="btn btn-primary btn-xs">
-                                                        <i class="fas fa-fw fa-edit"></i> Edit
-                                                    </a>
-                                                    <input type="hidden" name="kategori_id" value="<?= $data->kategori_id ?>">
-                                                    <button onclick="return confirm('Hapus kategori?')" type="submit" class="btn btn-danger btn-xs">
-                                                        <i class="fas fa-fw fa-trash"></i> Hapus
-                                                    </button>
-                                                </form>
+                                                <a href="<?= site_url('kategori/editkategori/' . $data->kategori_id);  ?>" class="btn btn-primary btn-xs">
+                                                    <i class="fas fa-fw fa-edit"></i> Edit
+                                                </a>
+                                                <a href="<?= site_url('kategori/hapus/' . $data->kategori_id);  ?>" class="btn btn-danger btn-xs"><i class="fas fa-fw fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

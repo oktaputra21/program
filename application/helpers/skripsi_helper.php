@@ -24,7 +24,7 @@ function dd($params)
 
 function rupiah($nominal)
 {
-    $result = "Rp " . number_format($nominal, 2, ',', '.');
+    $result = number_format($nominal, 0, ',', '.');
     return $result;
 }
 

@@ -23,7 +23,7 @@
                                         <th>Kategori</th>
                                         <th>Nama Barang</th>
                                         <th>Stock</th>
-                                        <th>Harga</th>
+                                        <th>Harga (Rupiah)</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -34,8 +34,8 @@
                                             <td><?= $no++ ?></td>
                                             <td><?= $data->nama_kategori ?></td>
                                             <td><?= $data->nama_barang ?></td>
-                                            <td><?= $data->stock ?></td>
-                                            <td><?= rupiah($data->harga) ?></td>
+                                            <td class="text-right"><?= $data->stock ?></td>
+                                            <td class="text-right"><?= rupiah($data->harga) ?></td>
                                             <td class="text-center" width="210px">
                                                 <form action="<?= site_url('databarang/hapus') ?>" method="POST">
                                                     <a href="<?= site_url('databarang/editbarang/' . $data->id_barang);  ?>" class="btn btn-primary btn-xs">

@@ -39,6 +39,7 @@ class Penjualan_m extends CI_Model
         $this->db->select('*');
         $this->db->from('transaksi');
         $this->db->join('user', 'user.id = transaksi.id_user');
+        $this->db->order_by('date', 'desc');
         $query = $this->db->get();
         return $query;
     }
