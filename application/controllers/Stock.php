@@ -10,7 +10,7 @@ class Stock extends CI_Controller
     }
 
 
-    public function cetak_pdf_in()
+    public function cetak_pdf_inn()
     {
         $this->load->library('dompdf_gen');
 
@@ -26,6 +26,14 @@ class Stock extends CI_Controller
         $this->dompdf->load_html($html);
         $this->dompdf->render();
         $this->dompdf->stream("laporan_stock_in.pdf", array('Attachment' => 0));
+    }
+
+    public function cetak_pdf_in()
+    {
+        $this->load->library('mypdf');
+		$data['stock'] = $this->stock_m->get_stock_in('stock')->result();
+        // $this->load->view('transaksi/stock_in/laporan_pdf', $data);
+		$this->mypdf->generate('transaksi/stock_in/laporan_pdf', $data);
     }
 
     public function stock_in_tampil()

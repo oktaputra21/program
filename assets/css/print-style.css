@@ -1,0 +1,106 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+	font-family: Arial;
+}
+
+.container {
+	width: 100%;
+	height: auto;
+}
+
+.header {
+	padding: 20px;
+	border-bottom: 5px solid #000;
+}
+
+.content {
+	padding: 25px;
+}
+
+.author {
+	width: 100%;
+	height: auto;
+}
+
+.box {
+	width: 100%;
+	height: auto;
+	/* margin-top: 30px; */
+}
+
+.pengesahan1 {
+	float: left;
+	width: 50%;
+	height: 200px;
+}
+
+.pengesahan2 {
+	float: right;
+	width: 50%;
+	height: 200px;
+}
+
+.logo {
+	padding-left: 10px;
+	float: left;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.title {
+	text-align: center;
+}
+
+.table1 {
+	font-family: sans-serif;
+	color: #444;
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #000;
+}
+
+table.table1,
+th,
+td {
+	padding: 8px;
+	text-align: left;
+	border: 1px solid #000;
+}
+
+.ttd_nama1 {
+	text-indent: 15%;
+	padding-bottom: 50px;
+}
+
+.ttd_nama2 {
+	text-indent: 50%;
+	padding-bottom: 50px;
+}
+
+.lokasi-tgl {
+	text-indent: 48%;
+}
+
+.nama1 {
+	text-indent: 10%;
+}
+
+.nama2 {
+	text-indent: 48%;
+}
+
+.content h3 {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
