@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2020 at 06:54 PM
+-- Generation Time: Jul 29, 2020 at 12:37 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -33,18 +33,29 @@ CREATE TABLE `barang` (
   `nama_barang` varchar(30) NOT NULL,
   `kategori_id` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
-  `harga` int(11) NOT NULL
+  `harga` int(11) NOT NULL,
+  `id_satuan` int(11) NOT NULL,
+  `ukuran` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `kategori_id`, `stock`, `harga`) VALUES
-(1, 'Cat Alvitex', 1, 71, 100000),
-(2, 'Semen Gresik', 2, 78, 50000),
-(3, 'Paku Beton', 3, 0, 10000),
-(4, 'Pipa Rucika', 4, 0, 50000);
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `kategori_id`, `stock`, `harga`, `id_satuan`, `ukuran`) VALUES
+(6, 'Cat Avitex Exterior', 1, 0, 32000, 1, '1KG'),
+(7, 'Cat Avitex Exterior', 1, 0, 157000, 1, '5KG'),
+(8, 'Cat Avitex Exterior', 1, 0, 720000, 1, '25KG'),
+(9, 'Cat Avitex Interior', 1, 0, 30000, 1, '1KG'),
+(10, 'Cat Avitex Interior', 1, 0, 110000, 1, '5KG'),
+(11, 'Cat Avitex Interior', 1, 0, 515000, 1, '25KG'),
+(12, 'Cat Alvitex Dasar', 1, 0, 110000, 1, '4KG'),
+(13, 'Cat Avitex Plamir Tembok', 1, 0, 65000, 1, '5KG'),
+(14, 'Cat Avitex Plamir Tembok', 1, 0, 320000, 1, '25KG'),
+(15, 'Cat Avitex Genteng & Seng', 1, 0, 145000, 1, '4KG'),
+(16, 'Cat Avitex Genteng & Seng', 1, 0, 835000, 1, '20KG'),
+(17, 'Cat Avitex Tembok & Plafon', 1, 0, 125000, 1, '4KG'),
+(18, 'Cat Avitex Tembok & Plafon', 1, 0, 550000, 1, '20KG');
 
 -- --------------------------------------------------------
 
@@ -75,20 +86,6 @@ CREATE TABLE `detail_transaksi` (
   `qty` int(11) NOT NULL,
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `detail_transaksi`
---
-
-INSERT INTO `detail_transaksi` (`id_detail`, `no_transaksi`, `harga`, `id_barang`, `qty`, `total`) VALUES
-(1, 11, 100000, 1, 4, 400000),
-(2, 11, 50000, 2, 16, 800000),
-(3, 12, 100000, 1, 6, 600000),
-(4, 12, 50000, 2, 4, 200000),
-(5, 13, 100000, 1, 1, 100000),
-(6, 14, 100000, 1, 7, 700000),
-(7, 14, 50000, 2, 2, 100000),
-(8, 15, 100000, 1, 1, 100000);
 
 --
 -- Triggers `detail_transaksi`
@@ -157,6 +154,15 @@ CREATE TABLE `satuan` (
   `nama_satuan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `satuan`
+--
+
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES
+(1, 'Kilogram'),
+(2, 'Batang'),
+(3, 'Biji');
+
 -- --------------------------------------------------------
 
 --
@@ -173,15 +179,6 @@ CREATE TABLE `stock` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `stock`
---
-
-INSERT INTO `stock` (`id_stock`, `id_barang`, `qty`, `type`, `tanggal`, `keterangan`, `user_id`) VALUES
-(1, 1, 100, 'in', '2020-07-18', 'Pembelian', 1),
-(2, 1, 10, 'out', '2020-07-18', 'Rusak', 1),
-(3, 2, 100, 'in', '2020-07-18', 'Pembelian', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -194,17 +191,6 @@ CREATE TABLE `transaksi` (
   `total` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `transaksi`
---
-
-INSERT INTO `transaksi` (`no_transaksi`, `date`, `total`, `id_user`) VALUES
-(11, '2020-07-18', 1200000, 1),
-(12, '2020-07-18', 800000, 1),
-(13, '2020-07-18', 100000, 1),
-(14, '2020-07-27', 800000, 1),
-(15, '2020-07-29', 100000, 1);
 
 -- --------------------------------------------------------
 
@@ -259,7 +245,8 @@ INSERT INTO `user_role` (`role_id`, `role`) VALUES
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`),
-  ADD KEY `kategori_id` (`kategori_id`);
+  ADD KEY `kategori_id` (`kategori_id`),
+  ADD KEY `id_satuan` (`id_satuan`);
 
 --
 -- Indexes for table `cart`
@@ -331,13 +318,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `detail_transaksi`
@@ -356,6 +343,12 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `peramalan`
   MODIFY `id_peramalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `satuan`
+--
+ALTER TABLE `satuan`
+  MODIFY `id_satuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `stock`
@@ -389,7 +382,8 @@ ALTER TABLE `user_role`
 -- Constraints for table `barang`
 --
 ALTER TABLE `barang`
-  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`);
+  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`),
+  ADD CONSTRAINT `barang_ibfk_2` FOREIGN KEY (`id_satuan`) REFERENCES `satuan` (`id_satuan`);
 
 --
 -- Constraints for table `cart`

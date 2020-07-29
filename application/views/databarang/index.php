@@ -22,6 +22,8 @@
                                         <th>#</th>
                                         <th>Kategori</th>
                                         <th>Nama Barang</th>
+                                        <th>Satuan</th>
+                                        <th>Ukuran</th>
                                         <th>Stock</th>
                                         <th>Harga (Rupiah)</th>
                                         <th>Action</th>
@@ -34,6 +36,8 @@
                                             <td><?= $no++ ?></td>
                                             <td><?= $data->nama_kategori ?></td>
                                             <td><?= $data->nama_barang ?></td>
+                                            <td><?= $data->nama_satuan ?></td>
+                                            <td><?= $data->ukuran ?></td>
                                             <td class="text-right"><?= $data->stock ?></td>
                                             <td class="text-right"><?= rupiah($data->harga) ?></td>
                                             <td class="text-center" width="210px">

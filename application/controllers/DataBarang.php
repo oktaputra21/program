@@ -32,12 +32,14 @@ class DataBarang extends CI_Controller
         $databarang->harga = null;
 
         $kategori = $this->kategori_m->get();
+        $satuan = $this->satuan_m->get();
 
         $data = array(
             'page' => 'tambah',
             'row' => $databarang,
             'title' => 'Tambah Data Barang',
             'kategori' => $kategori,
+            'satuan' => $satuan,
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
         );
 
@@ -46,6 +48,8 @@ class DataBarang extends CI_Controller
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required|trim');
         $this->form_validation->set_rules('qty', 'QTY', 'required|trim');
         $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
+        $this->form_validation->set_rules('satuan', 'Satuan', 'required|trim');
+        $this->form_validation->set_rules('ukuran', 'Ukuran', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -90,12 +94,14 @@ class DataBarang extends CI_Controller
         $databarang->harga = null;
 
         $kategori = $this->kategori_m->get();
+        $satuan = $this->satuan_m->get();
 
         $data = array(
             'page' => 'editbarang',
             'row' => $databarang,
             'title' => 'Edit Data Barang',
             'kategori' => $kategori,
+            'satuan' => $satuan,
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
         );
 
@@ -104,6 +110,8 @@ class DataBarang extends CI_Controller
 
         $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required|trim');
         $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
+        $this->form_validation->set_rules('satuan', 'Satuan', 'required|trim');
+        $this->form_validation->set_rules('ukuran', 'Ukuran', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $query = $this->user_m->get($id_barang)->row();

@@ -34,7 +34,7 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $data->date ?></td>
-                            <td><?= rupiah($data->total) ?></td>
+                            <td class="text-right"><?= rupiah($data->total) ?></td>
                             <td><?= $data->nama ?></td>
 
                             <?php
@@ -113,9 +113,9 @@
                         $('#table-dynamic').append(`
                             <tr>
                             <td>`+this.nama_barang+`</td>
-                            <td>`+this.harga+`</td>
+                            <td class="text-right">`+this.harga+`</td>
                             <td>`+this.qty+`</td>
-                            <td>`+this.total_detail+`</td>
+                            <td class="text-right">`+this.total_detail+`</td>
                             </tr>
                         `);
                     });

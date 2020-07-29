@@ -141,6 +141,7 @@
                             <th>ID Barang</th>
                             <th>Kategori</th>
                             <th>Nama Barang</th>
+                            <th>Ukuran</th>
                             <th>Harga</th>
                             <th>Stock</th>
                             <th>Action</th>
@@ -152,6 +153,7 @@
                                 <td><?= $data->id_barang ?></td>
                                 <td><?= $data->nama_kategori ?></td>
                                 <td><?= $data->nama_barang ?></td>
+                                <td><?= $data->ukuran ?></td>
                                 <td><?= rupiah($data->harga) ?></td>
                                 <td><?= $data->stock ?></td>
                                 <td>

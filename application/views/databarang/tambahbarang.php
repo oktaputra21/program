@@ -31,6 +31,20 @@
                                         <input type="text" name="nama_barang" class="form-control" value="<?= $row->nama_barang ?>" required>
                                         <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>') ?>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Satuan :</label>
+                                        <select name="satuan" class="form-control">
+                                            <option value="">- Pilih -</option>
+                                            <?php foreach ($satuan->result() as $key => $data) { ?>
+                                                <option value="<?= $data->id_satuan ?>"><?= $data->nama_satuan ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ukuran :</label>
+                                        <input type="text" name="ukuran" class="form-control" value="<?= $row->nama_barang ?>" required>
+                                        <?= form_error('ukuran', '<small class="text-danger pl-3">', '</small>') ?>
+                                    </div>
 
                                     <div class=" form-group">
                                         <label>Harga :</label>

@@ -11,7 +11,7 @@
                         <select name="barangId" id="" class="form-control" required>
                             <option value="">Select</option>
                             <?php foreach ($listBarang as $row) : ?>
-                                <option value="<?= $row->id_barang ?>" <?= ($_GET) ? ($_GET['barangId'] == $row->id_barang) ? 'selected' : '' : '' ?>><?= $row->id_barang . ' - ' . $row->nama_barang ?></option>
+                                <option value="<?= $row->id_barang ?>" <?= ($_GET) ? ($_GET['barangId'] == $row->id_barang) ? 'selected' : '' : '' ?>><?= $row->id_barang . ' - ' . $row->nama_barang . ' - ' . $row->ukuran ?></option>
                             <?php endforeach ?>
                         </select>
                     </div>

@@ -33,6 +33,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="<?= base_url('databarang') ?>">Produk</a>
                     <a class="collapse-item" href="<?= base_url('kategori') ?>">Kategori</a>
+                    <a class="collapse-item" href="<?= base_url('satuan') ?>">Satuan</a>
                 </div>
             </div>
         </li>

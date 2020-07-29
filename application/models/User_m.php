@@ -19,6 +19,7 @@ class User_m extends CI_Model
         $this->db->select('*');
         $this->db->from('barang');
         $this->db->join('kategori', 'kategori.kategori_id = barang.kategori_id');
+        $this->db->join('satuan', 'satuan.id_satuan = barang.id_satuan');
         if ($id_barang != null) {
             $this->db->where('id_barang', $id_barang);
         }
@@ -29,16 +30,20 @@ class User_m extends CI_Model
     public function tambah($post)
     {
         $params['kategori_id'] = $post['kategori'];
+        $params['id_satuan'] = $post['satuan'];
         $params['nama_barang'] = $post['nama_barang'];
         $params['harga'] = $post['harga'];
+        $params['ukuran'] = $post['ukuran'];
         $this->db->insert('barang', $params);
     }
 
     public function editbarang($post)
     {
         $params['kategori_id'] = $post['kategori'];
+        $params['id_satuan'] = $post['satuan'];
         $params['nama_barang'] = $post['nama_barang'];
         $params['harga'] = $post['harga'];
+        $params['ukuran'] = $post['ukuran'];
         $this->db->where('id_barang', $post['id_barang']);
         $this->db->update('barang', $params);
     }
