@@ -215,6 +215,10 @@
 
 
 <script>
+	$(document).ready( function () {
+		$('#table1').DataTable();
+	} );
+	
     $(document).on('click', '#select', function() {
         $('#id_barang').val($(this).data('id'));
         $('#harga').val($(this).data('harga'));
