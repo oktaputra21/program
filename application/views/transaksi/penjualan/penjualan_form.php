@@ -135,7 +135,7 @@
                 </button>
             </div>
             <div class="modal-body table-responsive">
-                <table class="table table-bordered table-striped" id="table1">
+                <table class="table table-bordered table-striped" id="dataTable">
                     <thead>
                         <tr>
                             <th>ID Barang</th>
@@ -154,7 +154,7 @@
                                 <td><?= $data->nama_kategori ?></td>
                                 <td><?= $data->nama_barang ?></td>
                                 <td><?= $data->ukuran ?></td>
-                                <td><?= rupiah($data->harga) ?></td>
+                                <td class="text-right"><?= rupiah($data->harga) ?></td>
                                 <td><?= $data->stock ?></td>
                                 <td>
                                     <button class="btn btn-small btn-info" id="select" data-id="<?= $data->id_barang ?>" data-harga="<?= $data->harga ?>" data-stock="<?= $data->stock ?>">
@@ -215,9 +215,6 @@
 
 
 <script>
-	$(document).ready( function () {
-		$('#table1').DataTable();
-	} );
 	
     $(document).on('click', '#select', function() {
         $('#id_barang').val($(this).data('id'));

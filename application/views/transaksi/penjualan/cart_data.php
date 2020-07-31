@@ -4,9 +4,9 @@ if ($cart->num_rows() > 0) {
         <tr>
             <td><?= $no++ ?>.</td>
             <td><?= $data->nama_barang ?></td>
-            <td class="text-left"><?= $data->harga_cart ?></td>
+            <td class="text-right"><?= $data->harga_cart ?></td>
             <td class="text-center"><?= $data->qty ?></td>
-            <td id="total_cart" class="text-left"><?= $data->total ?></td>
+            <td id="total_cart" class="text-right"><?= $data->total ?></td>
             <td class="text-center">
                 <button id="update_cart" data-toggle="modal" data-target="#modal-item-edit" data-cartid="<?= $data->id_cart ?>" data-item="<?= $data->id_barang ?>" data-barang="<?= $data->nama_barang ?>" data-harga="<?= $data->harga_cart ?>" data-qty="<?= $data->qty ?>" data-total="<?= $data->total ?>" class="btn btn-primary">
                     <i class="fa fa-pencil"></i> Update

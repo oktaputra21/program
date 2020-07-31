@@ -29,9 +29,18 @@
                                         </span>
                                     </div>
                                     <div class="form-group">
-                                        <label>Nama Barang :</label>
-                                        <input type="text" name="nama_barang" id="nama_barang" class="form-control" value="" readonly>
-                                        <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>') ?>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <label>Nama Barang :</label>
+                                                <input type="text" name="nama_barang" id="nama_barang" class="form-control" value="" readonly>
+                                                <?= form_error('nama_barang', '<small class="text-danger pl-3">', '</small>') ?>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Ukuran</label>
+                                                <input type="text" name="ukuran" id="ukuran" class="form-control" value="" readonly>
+                                                <?= form_error('ukuran', '<small class="text-danger pl-3">', '</small>') ?>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="row">
@@ -88,6 +97,7 @@
                                             <th>ID Barang</th>
                                             <th>Kategori</th>
                                             <th>Nama Barang</th>
+                                            <th>Ukuran</th>
                                             <th>Harga</th>
                                             <th>Stock</th>
                                             <th>Action</th>
@@ -99,10 +109,11 @@
                                                 <td><?= $data->id_barang ?></td>
                                                 <td><?= $data->nama_kategori ?></td>
                                                 <td><?= $data->nama_barang ?></td>
+                                                <td><?= $data->ukuran ?></td>
                                                 <td><?= rupiah($data->harga) ?></td>
                                                 <td><?= $data->stock ?></td>
                                                 <td>
-                                                    <button class="btn btn-small btn-info" id="select" data-id="<?= $data->id_barang ?>" data-kategori="<?= $data->nama_kategori ?>" data-nama="<?= $data->nama_barang ?>" data-harga="<?= $data->harga ?>" data-stock="<?= $data->stock ?>">
+                                                    <button class="btn btn-small btn-info" id="select" data-id="<?= $data->id_barang ?>" data-kategori="<?= $data->nama_kategori ?>" data-nama="<?= $data->nama_barang ?>" data-harga="<?= $data->harga ?>" data-stock="<?= $data->stock ?>" data-ukuran="<?= $data->ukuran ?>">
                                                         <i class="fa fa-check">Select</i>
                                                     </button>
                                                 </td>
@@ -122,12 +133,14 @@
                             var nama_kategori = $(this).data('kategori');
                             var nama_barang = $(this).data('nama');
                             var harga = $(this).data('harga');
+                            var ukuran = $(this).data('ukuran');
                             var qty = $(this).data('stock');
                             $('#id_barang').val(id_barang);
                             $('#nama_kategori').val(nama_kategori);
                             $('#nama_barang').val(nama_barang);
                             $('#harga').val(harga);
                             $('#stock').val(qty);
+                            $('#ukuran').val(ukuran);
                             $('#modal-item').modal('hide');
                         })
                     })
