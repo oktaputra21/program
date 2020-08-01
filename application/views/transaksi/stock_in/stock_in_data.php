@@ -24,6 +24,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama Barang</th>
+                                        <th>Ukuran</th>
                                         <th>QTY</>
                                         <th>Tanggal</th>
                                         <th>Keterangan</th>
@@ -35,7 +36,8 @@
                                     foreach ($row as $data) { ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
-                                            <td><?= $data->nama_barang ?></>
+                                            <td><?= $data->nama_barang ?></td>
+                                            <td><?= $data->ukuran ?></td>
                                             <td class="text-right"><?= $data->qty ?></td>
                                             <td><?= $data->tanggal ?></td>
                                             <td><?= $data->keterangan ?></td>
