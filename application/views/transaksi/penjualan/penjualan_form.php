@@ -232,7 +232,7 @@
         if (id_barang == '') {
             alert('Produk belum dipilih!')
             $('#id_barang').focus()
-        } else if (stock < 1) {
+        } else if (stock < qty) {
             alert('Stock tidak mencukupi!')
             $('#id_barang').val('')
             $('#id_barang').focus()
