@@ -53,7 +53,7 @@
                                             <?php
                                             if ($this->session->userdata('role_id') == 2) { ?>
                                                 <td class="text-center" width="150px">
-                                                    <a href="#" type="submit" class="btn btn-success btn-xs">
+                                                    <a href="<?= site_url('stock/cetak_pdf_out') ?>" type="submit" class="btn btn-success btn-xs">
                                                         <i class="fas fa-fw fa-download"></i> Cetak
                                                     </a>
                                                 </td>

@@ -97,7 +97,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Barang</>
+                                <th>Nama Barang</th>
+                                <th>Ukuran</th>
                                 <th>Harga</th>
                                 <th class="text-center">QTY</th>
                                 <th>Total</th>
@@ -155,7 +156,7 @@
                                 <td><?= $data->nama_barang ?></td>
                                 <td><?= $data->ukuran ?></td>
                                 <td class="text-right"><?= rupiah($data->harga) ?></td>
-                                <td><?= $data->stock ?></td>
+                                <td class="text-right"><?= $data->stock ?></td>
                                 <td>
                                     <button class="btn btn-small btn-info" id="select" data-id="<?= $data->id_barang ?>" data-harga="<?= $data->harga ?>" data-stock="<?= $data->stock ?>">
                                         <i class="fa fa-check">Select</i>

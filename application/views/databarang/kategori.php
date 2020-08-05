@@ -35,7 +35,7 @@
                                                 <a href="<?= site_url('kategori/editkategori/' . $data->kategori_id);  ?>" class="btn btn-primary btn-xs">
                                                     <i class="fas fa-fw fa-edit"></i> Edit
                                                 </a>
-                                                <a href="<?= site_url('kategori/hapus/' . $data->kategori_id);  ?>" class="btn btn-danger btn-xs"><i class="fas fa-fw fa-trash"></i> Hapus</a>
+                                                <!-- <a href="<?= site_url('kategori/hapus/' . $data->kategori_id);  ?>" class="btn btn-danger btn-xs"><i class="fas fa-fw fa-trash"></i> Hapus</a> -->
                                             </td>
                                         </tr>
                                     <?php } ?>

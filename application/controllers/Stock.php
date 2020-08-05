@@ -10,23 +10,23 @@ class Stock extends CI_Controller
     }
 
 
-    public function cetak_pdf_inn()
-    {
-        $this->load->library('dompdf_gen');
+    // public function cetak_pdf_inn()
+    // {
+    //     $this->load->library('dompdf_gen');
 
-        $data['stock'] = $this->stock_m->get_stock_in('stock')->result();
+    //     $data['stock'] = $this->stock_m->get_stock_in('stock')->result();
 
-        $this->load->view('transaksi/stock_in/laporan_pdf', $data);
+    //     $this->load->view('transaksi/stock_in/laporan_pdf', $data);
 
-        $paper_size = 'A4';
-        $orientation = 'potrait';
-        $html = $this->output->get_output();
-        $this->dompdf->set_paper($paper_size, $orientation);
+    //     $paper_size = 'A4';
+    //     $orientation = 'potrait';
+    //     $html = $this->output->get_output();
+    //     $this->dompdf->set_paper($paper_size, $orientation);
 
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("laporan_stock_in.pdf", array('Attachment' => 0));
-    }
+    //     $this->dompdf->load_html($html);
+    //     $this->dompdf->render();
+    //     $this->dompdf->stream("laporan_stock_in.pdf", array('Attachment' => 0));
+    // }
 
     public function cetak_pdf_in()
     {
@@ -34,6 +34,14 @@ class Stock extends CI_Controller
 		$data['stock'] = $this->stock_m->get_stock_in('stock')->result();
         // $this->load->view('transaksi/stock_in/laporan_pdf', $data);
 		$this->mypdf->generate('transaksi/stock_in/laporan_pdf', $data);
+    }
+
+    public function cetak_pdf_out()
+    {
+        $this->load->library('mypdf');
+        $data['stock'] = $this->stock_m->get_stock_out('stock')->result();
+        // $this->load->view('transaksi/stock_in/laporan_pdf', $data);
+        $this->mypdf->generate('transaksi/stock_out/laporan_pdf', $data);
     }
 
     public function stock_in_tampil()

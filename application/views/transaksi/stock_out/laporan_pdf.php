@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-	<title>LAPORAN STOCK IN</title>
+	<title>LAPORAN STOCK OUT</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/print-style.css') ?>">
 </head>
 <body>
@@ -13,7 +13,7 @@
     </section>
     <div class="container">
         <section class="content">
-            <p class="text-center">Laporan Stock In</p>
+            <p class="text-center">Laporan Stock Out</p>
             <table class="table1">
                 <thead>
                 <tr>
