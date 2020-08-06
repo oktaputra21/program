@@ -77,10 +77,10 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= base_url('peramalan')?>">Laporan Peramalan</a>
-                    <a class="collapse-item" href="<?= base_url('penjualan') ?>">Laporan Penjualan</a>
-                    <a class="collapse-item" href="<?= base_url('stock/stock_in_tampil') ?>">Laporan Stock In</a>
-                    <a class="collapse-item" href="<?= base_url('stock/stock_out_tampil') ?>">Laporan Stock Out</a>
+                    <a class="collapse-item" href="<?= base_url('peramalan/tampil_user_pdf')?>">Laporan Peramalan</a>
+                    <a class="collapse-item" href="<?= base_url('penjualan/tampil_user_penjualan') ?>">Laporan Penjualan</a>
+                    <a class="collapse-item" href="<?= base_url('stock/tampil_user_in') ?>">Laporan Stock In</a>
+                    <a class="collapse-item" href="<?= base_url('stock/tampil_user_out') ?>">Laporan Stock Out</a>
                 </div>
             </div>
         </li>

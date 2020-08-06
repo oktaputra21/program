@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-	<title>LAPORAN STOCK OUT</title>
+	<title>LAPORAN PERAMALAN</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/print-style.css') ?>">
 </head>
 <body>
@@ -13,27 +13,30 @@
     </section>
     <div class="container">
         <section class="content">
-            <h1 class="text-center">Laporan Stock Out</h1>
+            <h1 class="text-center">Laporan Peramalan</h1>
             <table class="table1">
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nama Barang</th>
-                    <th>Ukuran</th>
-                    <th>QTY</th>
-                    <th>Tanggal</th>
-                    <th>Keterangan</th>
+                        <th>Nama Barang</th>
+                        <th>Ukuran</th>
+                        <th>Bulan</th>
+                        <th>Tahun</th>
+                        <th>Hasil</th>
+                        <th>MAD</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $no = 1; foreach($stock as $data) { ?>
+                <?php $no = 1;
+                    foreach ($row as $data) { ?>
                 <tr>
-                    <td><?= $no++ ?></td>
-                    <td><?= $data->nama_barang ?></td>
-                    <td><?= $data->ukuran ?></td>
-                    <td><?= $data->qty ?></td>
-                    <td><?= $data->tanggal ?></td>
-                    <td><?= $data->keterangan ?></td>
+                            <td><?= $no++ ?></td>
+                            <td><?= $data->nama_barang ?></td>
+                            <td><?= $data->ukuran ?></td>
+                            <td><?= $data->bulan ?></td>
+                            <td class="text-right"><?= $data->tahun ?></td>
+                            <td class="text-right"><?= $data->hasil ?></td>
+                            <td class="text-right"><?= $data->mad ?></td>
                 </tr>
                 <?php } ?>               
                 </tbody>

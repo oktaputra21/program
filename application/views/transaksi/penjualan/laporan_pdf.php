@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-	<title>LAPORAN STOCK OUT</title>
+	<title>LAPORAN PENJUALAN</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/print-style.css') ?>">
 </head>
 <body>
@@ -13,7 +13,7 @@
     </section>
     <div class="container">
         <section class="content">
-            <h1 class="text-center">Laporan Stock Out</h1>
+            <h1 class="text-center">Laporan Penjualan</h1>
             <table class="table1">
                 <thead>
                 <tr>

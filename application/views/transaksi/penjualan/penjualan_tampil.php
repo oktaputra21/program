@@ -48,14 +48,14 @@
                             </td>
                             <?php } ?>
 
-                            <?php
+                            <!-- <?php
                             if ($this->session->userdata('role_id') == 2) { ?>
                             <td class="text-center" width="150px">
                                 <a href="#" type="submit" class="btn btn-success btn-xs">
                                     <i class="fas fa-fw fa-download"></i> Cetak
                                 </a>
                             </td>
-                            <?php } ?>
+                            <?php } ?> -->
                             
                         </tr>
                     <?php } ?>
@@ -80,6 +80,7 @@
                     <thead>
                         <tr>
                         <th>Nama Barang</th>
+                        <th>Ukuran</th>
                         <th>Harga</th>
                         <th>QTY</th>
                         <th>Total</th>
@@ -113,6 +114,7 @@
                         $('#table-dynamic').append(`
                             <tr>
                             <td>`+this.nama_barang+`</td>
+                            <td>`+this.ukuran+`</td>
                             <td class="text-right">`+this.harga+`</td>
                             <td>`+this.qty+`</td>
                             <td class="text-right">`+this.total_detail+`</td>

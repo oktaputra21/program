@@ -11,7 +11,7 @@ class Peramalan_m extends CI_Model
         $this->db->from('peramalan');
         $this->db->join('barang', 'peramalan.id_barang = barang.id_barang');
         if ($id != null) {
-            $this->db->where('no_transaksi', $id);
+            $this->db->where('id_peramalan', $id);
         }
         $query = $this->db->get();
         return $query;

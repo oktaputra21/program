@@ -22,6 +22,27 @@ class Peramalan extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function cetak_pdf_peramalan()
+    {
+        $this->load->library('mypdf');
+        $data['row'] = $this->peramalan_m->getdata()->result();
+        // $this->load->view('transaksi/stock_in/laporan_pdf', $data);
+        $this->mypdf->generate('peramalan/laporan_pdf', $data);
+    }
+
+    public function tampil_user_pdf()
+    {
+        $data['title'] = 'Peramalan';
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+        $data['row'] = $this->peramalan_m->getdata()->result();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('peramalan/cetak_laporan', $data);
+        $this->load->view('templates/footer');
+    }
+
     public function tambah_peramalan()
     {
         $data['listBarang'] = $this->user_m->get()->result();

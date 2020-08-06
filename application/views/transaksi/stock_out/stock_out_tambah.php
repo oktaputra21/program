@@ -91,7 +91,7 @@
                                 </button>
                             </div>
                             <div class="modal-body table-responsive">
-                                <table class="table table-bordered table-striped" id="table1">
+                                <table class="table table-bordered table-striped" id="dataTable">
                                     <thead>
                                         <tr>
                                             <th>ID Barang</th>

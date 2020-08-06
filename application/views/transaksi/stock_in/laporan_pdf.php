@@ -13,7 +13,7 @@
     </section>
     <div class="container">
         <section class="content">
-            <p class="text-center">Laporan Stock In</p>
+            <h1 class="text-center">Laporan Stock In</h1>
             <table class="table1">
                 <thead>
                 <tr>
@@ -44,11 +44,11 @@
                 <p class="ttd_nama1"></p>
                 <p class="nama1"></p>
             </div>
-            <div class="pengesahan2">
+            <!-- <div class="pengesahan2">
                 <p class="lokasi-tgl">Gianyar, <?= date("Y-m-d") ?></p>
                 <p class="ttd_nama2">Ketua Sekaa Teruna</p>
                 <p class="nama2">I Kadek Bigiantara Putra</p>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>

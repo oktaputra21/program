@@ -6,12 +6,12 @@
 
 <div class="card-body">
     <?php
-    if ($this->session->userdata('role_id') == 1) { ?>
+    if ($this->session->userdata('role_id') == 2) { ?>
     <div class="row">
         <div class="col-12">
             <div class="float-right mb-3">
-                <a href="<?= site_url('peramalan/tambah_peramalan');  ?>" class="btn btn-primary">
-                    Tambah Data
+                <a href="<?= site_url('peramalan/cetak_pdf_peramalan');  ?>" class="btn btn-success">
+                    Cetak Laporan
                 </a>
             </div>
         </div>
@@ -30,7 +30,6 @@
                         <th>Tahun</th>
                         <th>Hasil</th>
                         <th>MAD</th>
-                        <th class="text-center">Action</>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +44,7 @@
                             <td class="text-right"><?= $data->hasil ?></td>
                             <td class="text-right"><?= $data->mad ?></td>
 
-                            <?php
+                            <!-- <?php
                             if ($this->session->userdata('role_id') == 1) { ?>
                             <td class="text-center" width="150px">
                                 <a href="<?= site_url('peramalan/del/' . $data->id_peramalan) ?>" onclick="return confirm('Hapus data peramalan?')" type="submit" class="btn btn-danger btn-xs">
@@ -54,7 +53,7 @@
                             </td>
                             <?php } ?>
 
-                            <!-- <?php
+                            <?php
                             if ($this->session->userdata('role_id') == 2) { ?>
                             <td class="text-center" width="150px">
                                 <a href="#" type="submit" class="btn btn-success btn-xs">
