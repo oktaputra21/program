@@ -13,27 +13,29 @@
     </section>
     <div class="container">
         <section class="content">
-            <h1 class="text-center">Laporan Penjualan</h1>
+            <h1 style="text-align: center">Laporan Penjualan</h1>
             <table class="table1">
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>Kode Transaksi</th>
                     <th>Nama Barang</th>
                     <th>Ukuran</th>
                     <th>QTY</th>
                     <th>Tanggal</th>
-                    <th>Keterangan</th>
+                    <th>Total</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $no = 1; foreach($stock as $data) { ?>
+                <?php $no = 1; foreach($row as $data) { ?>
                 <tr>
                     <td><?= $no++ ?></td>
+                    <td><?= $data->no_transaksi ?></td>
                     <td><?= $data->nama_barang ?></td>
                     <td><?= $data->ukuran ?></td>
                     <td><?= $data->qty ?></td>
-                    <td><?= $data->tanggal ?></td>
-                    <td><?= $data->keterangan ?></td>
+                    <td><?= $data->date ?></td>
+                    <td><?= $data->total ?></td>
                 </tr>
                 <?php } ?>               
                 </tbody>

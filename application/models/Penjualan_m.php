@@ -56,6 +56,16 @@ class Penjualan_m extends CI_Model
             ->result();
     }
 
+    public function getAllTransaksi()
+    {
+        return $this->db->select('*')
+            ->from('detail_transaksi')
+            ->join('barang', 'barang.id_barang = detail_transaksi.id_barang')
+            ->join('transaksi', 'transaksi.no_transaksi = detail_transaksi.no_transaksi')
+            ->get()
+            ->result();
+    }
+
     public function get_cart($params = null)
     {
         $this->db->select('*, barang.nama_barang, cart.harga as harga_cart');

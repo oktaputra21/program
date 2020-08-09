@@ -106,7 +106,7 @@ class Peramalan extends CI_Controller
                 $x2 += $arrayJml[$i][4];
             }
             $b = $xy / $x2;
-            $hasil = round($a + ($b * 7));
+            $hasil = round($a + ($b * 4));
 
             // kriim data
             $data['perhitungan'] = $arrayJml;

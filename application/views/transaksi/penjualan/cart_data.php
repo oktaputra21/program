@@ -21,6 +21,6 @@ if ($cart->num_rows() > 0) {
     }
 } else {
     echo '<tr>
-    <td colspan="8" class="text-center>Tidak ada item</td>
+    <td colspan="8" class="text-center">Tidak ada item</td>
     </tr>';
 } ?>

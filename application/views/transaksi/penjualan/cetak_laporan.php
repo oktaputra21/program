@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="float-right mb-3">
-                                <a href="<?= site_url('stock/cetak_pdf_in');  ?>" class="btn btn-success" >
+                                <a href="<?= site_url('penjualan/cetak_pdf_penjualan');  ?>" class="btn btn-success" >
                                     Cetak Laporan
                                 </a>
                             </div>
@@ -24,24 +24,24 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Tanggal</th>
+                                        <th>Kode Transaksi</th>
                                         <th>Nama Barang</th>
                                         <th>Ukuran</th>
                                         <th>QTY</>
-                                        <th>Tanggal</th>
-                                        <th>Keterangan</th>
+                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $no = 1;
-                                    foreach ($row as $data) { ?>
+                                    foreach ($transaksi as $data) { ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
-                                            <td><?= $data->tanggal ?></td>
+                                            <td><?= $data->date ?></td>
+                                            <td><?= $data->no_transaksi ?></td>
                                             <td><?= $data->nama_barang ?></td>
                                             <td><?= $data->ukuran ?></td>
-                                            <td class="text-right"><?= $data->qty ?></td>
-                                            <td><?= $data->tanggal ?></td>
-                                            <td><?= $data->keterangan ?></td>
+                                            <td><?= $data->qty ?></td>
+                                            <td><?= $data->total ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

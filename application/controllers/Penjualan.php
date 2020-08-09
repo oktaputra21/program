@@ -32,24 +32,22 @@ class Penjualan extends CI_Controller
     public function cetak_pdf_penjualan()
     {
         $this->load->library('mypdf');
-        $data['row'] = $this->penjualan_m->gettt();
-        $data['row'] = $this->penjualan_m->get_detail()->result();
-        $data['row'] = $this->penjualan_m->get();
-        $data['row'] = $this->penjualan_m->getDetailSale();
-        // $this->load->view('transaksi/stock_in/laporan_pdf', $data);
-        $this->mypdf->generate('peramalan/laporan_pdf', $data);
+        $data['row'] = $this->penjualan_m->getAllTransaksi();
+        // $this->load->view('transaksi/penjualan/laporan_pdf', $data);
+        $this->mypdf->generate('transaksi/penjualan/laporan_pdf', $data);
     }
 
     public function tampil_user_penjualan()
     {
-        $item = $this->penjualan_m->get()->result();
-        $row = $this->penjualan_m->gettt()->result();
+        $transaksi = $this->penjualan_m->getAllTransaksi();
+        // $row = $this->penjualan_m->get_detail()->result();
+        // dd($transaksi);
         $cart = $this->penjualan_m->get_cart();
         $data = array(
             'title' => 'Penjualan (Sale)',
-            'item' => $item,
+            'transaksi' => $transaksi,
             'cart' => $cart,
-            'row' => $row,
+            // 'row' => $row,
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
         );
 
