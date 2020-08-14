@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="form-group input-group">
                                         <!-- <input type="hidden" name="id_barang" id="id_barang"> -->
-                                        <input type="text" name="id_barang" id="id_barang" class="form-control">
+                                        <input type="text" name="id_barang" id="id_barang" class="form-control" required>
                                         <span>
                                             <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modal-item">
                                                 <i class="fa fa-search"></i>

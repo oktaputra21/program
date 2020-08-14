@@ -45,7 +45,7 @@ class Profile extends CI_Controller
             $upload_gambar = $_FILES['image']['name'];
 
             if ($upload_gambar) {
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'jpg|jpeg|png';
                 $config['max_size'] = '2048';
                 $config['upload_path'] = './assets/img/profile/';
                 $config['file_name'] = 'profile-' . date('Ymd') . '-' . substr(md5(rand()), 0, 10);

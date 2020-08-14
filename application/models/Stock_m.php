@@ -35,6 +35,7 @@ class Stock_m extends CI_Model
         $this->db->from('stock');
         $this->db->join('barang', 'stock.id_barang = barang.id_barang');
         $this->db->where('type', 'in');
+        $this->db->order_by('tanggal', 'desc');
         $query = $this->db->get();
         return $query;
     }
@@ -45,6 +46,7 @@ class Stock_m extends CI_Model
         $this->db->from('stock');
         $this->db->join('barang', 'stock.id_barang = barang.id_barang');
         $this->db->where('type', 'out');
+        $this->db->order_by('tanggal', 'desc');
         $query = $this->db->get();
         return $query;
     }

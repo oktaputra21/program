@@ -19,7 +19,7 @@
                                 <form action="<?= site_url('databarang/process') ?>" method="POST">
                                     <div class="form-group">
                                         <label>Kategori :</label>
-                                        <select name="kategori" class="form-control">
+                                        <select name="kategori" class="form-control" required>
                                             <option value="">- Pilih -</option>
                                             <?php foreach ($kategori->result() as $key => $data) { ?>
                                                 <option value="<?= $data->kategori_id ?>"><?= $data->nama_kategori ?></option>
@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Satuan :</label>
-                                        <select name="satuan" class="form-control">
+                                        <select name="satuan" class="form-control" required>
                                             <option value="">- Pilih -</option>
                                             <?php foreach ($satuan->result() as $key => $data) { ?>
                                                 <option value="<?= $data->id_satuan ?>"><?= $data->nama_satuan ?></option>
@@ -48,7 +48,7 @@
 
                                     <div class=" form-group">
                                         <label>Harga :</label>
-                                        <input type="text" name="harga" class="form-control" value="<?= $row->harga ?>">
+                                        <input type="text" name="harga" class="form-control" required value="<?= $row->harga ?>">
                                         <?= form_error('harga', '<small class="text-danger pl-3">', '</small>') ?>
                                     </div>
                                     <div class=" form-group">

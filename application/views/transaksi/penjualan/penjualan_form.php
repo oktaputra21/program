@@ -51,7 +51,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="number" id="qty" value="1" min="1" class="form-control">
+                                    <input type="number" id="qty" value="1" min="1" class="form-control" required>
                                 </div>
                             </td>
                         </tr>

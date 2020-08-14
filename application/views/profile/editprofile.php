@@ -51,7 +51,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </div>
                             </form>

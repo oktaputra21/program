@@ -19,7 +19,7 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                             <label for="">Bulan</label>
-                            <select name="bulan" id="bulan" class="form-control">
+                            <select name="bulan" id="bulan" class="form-control" required>
                                 <option value="">Select</option>
                                 <?php foreach (listMonth() as $a => $b) : ?>
                                     <option value="<?= $a ?>" <?= ($_GET) ? ($_GET['bulan'] == $a) ? 'selected' : '' : '' ?>><?= $b ?></option>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="">Tahun</label>
-                            <input type="number" name="tahun" class="form-control" value="<?= ($_GET) ? $_GET['tahun'] : '' ?>">
+                            <input type="number" name="tahun" class="form-control" required value="<?= ($_GET) ? $_GET['tahun'] : '' ?>">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Uji Peramalan</button>
