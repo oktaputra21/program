@@ -19,7 +19,7 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>No</th>
                                         <th>Nama Satuan</th>
                                         <th>Action</th>
                                     </tr>

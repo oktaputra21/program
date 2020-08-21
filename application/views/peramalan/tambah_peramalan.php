@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Tambah Peramalan</h1>
+    <h1 class="h3 mb-4 text-gray-800">Input Data Peramalan</h1>
 </div>
 <div class="row justify-content-center">
     <div class="col-md-11">
@@ -42,7 +42,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Periode</th>
                                 <th>Populasi (Y)</th>
                                 <th>X</th>
@@ -75,11 +75,11 @@
                     </table>
 
                     <hr>
-                    <h4>Hasil</h4>
+                    <h4>Hasil Peramalan</h4>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Periode</th>
                                 <th>Nama Barang</th>
                                 <th>Result</th>

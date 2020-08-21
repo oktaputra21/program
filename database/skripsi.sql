@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2020 at 01:51 PM
+-- Generation Time: Aug 21, 2020 at 03:54 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -88,6 +88,13 @@ CREATE TABLE `cart` (
   `total` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id_cart`, `id_barang`, `harga`, `qty`, `total`, `id_user`) VALUES
+(1, 6, 32000, 3, 96000, 1);
 
 -- --------------------------------------------------------
 
@@ -176,8 +183,9 @@ CREATE TABLE `peramalan` (
 --
 
 INSERT INTO `peramalan` (`id_peramalan`, `id_barang`, `bulan`, `tahun`, `hasil`, `mad`) VALUES
-(14, 6, 'Agustus', 2020, 8, 2.5),
-(15, 7, 'Agustus', 2020, 8, 2.5);
+(15, 7, 'Agustus', 2020, 8, 2.5),
+(16, 8, 'Agustus', 2020, 0, 0),
+(17, 6, 'Agustus', 2020, 8, 2.5);
 
 -- --------------------------------------------------------
 
@@ -413,7 +421,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `detail_transaksi`
@@ -431,7 +439,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `peramalan`
 --
 ALTER TABLE `peramalan`
-  MODIFY `id_peramalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_peramalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `satuan`
