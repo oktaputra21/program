@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2020 at 03:54 AM
+-- Generation Time: Aug 22, 2020 at 02:00 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -45,8 +45,8 @@ CREATE TABLE `barang` (
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `kategori_id`, `stock`, `harga`, `id_satuan`, `ukuran`) VALUES
 (6, 'Cat Avitex Exterior', 1, 55, 32000, 1, '1KG'),
 (7, 'Cat Avitex Exterior', 1, 40, 157000, 1, '5KG'),
-(8, 'Cat Avitex Exterior', 1, 125, 720000, 1, '25KG'),
-(9, 'Cat Avitex Interior', 1, 100, 30000, 1, '1KG'),
+(8, 'Cat Avitex Exterior', 1, 105, 720000, 1, '25KG'),
+(9, 'Cat Avitex Interior', 1, 75, 30000, 1, '1KG'),
 (10, 'Cat Avitex Interior', 1, 130, 110000, 1, '5KG'),
 (11, 'Cat Avitex Interior', 1, 100, 515000, 1, '25KG'),
 (12, 'Cat Alvitex Dasar', 1, 50, 110000, 1, '4KG'),
@@ -89,13 +89,6 @@ CREATE TABLE `cart` (
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `id_barang`, `harga`, `qty`, `total`, `id_user`) VALUES
-(1, 6, 32000, 3, 96000, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -127,7 +120,19 @@ INSERT INTO `detail_transaksi` (`id_detail`, `no_transaksi`, `harga`, `id_barang
 (14, 10, 32000, 6, 5, 160000),
 (15, 10, 157000, 7, 10, 1570000),
 (16, 11, 32000, 6, 10, 320000),
-(17, 11, 157000, 7, 5, 785000);
+(17, 11, 157000, 7, 5, 785000),
+(18, 12, 720000, 8, 3, 2160000),
+(19, 12, 30000, 9, 6, 180000),
+(20, 13, 720000, 8, 2, 1440000),
+(21, 13, 30000, 9, 4, 120000),
+(22, 14, 720000, 8, 4, 2880000),
+(23, 14, 30000, 9, 5, 150000),
+(24, 15, 720000, 8, 3, 2160000),
+(25, 15, 30000, 9, 3, 90000),
+(26, 16, 720000, 8, 3, 2160000),
+(27, 16, 30000, 9, 2, 60000),
+(28, 17, 720000, 8, 5, 3600000),
+(29, 17, 30000, 9, 5, 150000);
 
 --
 -- Triggers `detail_transaksi`
@@ -184,7 +189,6 @@ CREATE TABLE `peramalan` (
 
 INSERT INTO `peramalan` (`id_peramalan`, `id_barang`, `bulan`, `tahun`, `hasil`, `mad`) VALUES
 (15, 7, 'Agustus', 2020, 8, 2.5),
-(16, 8, 'Agustus', 2020, 0, 0),
 (17, 6, 'Agustus', 2020, 8, 2.5);
 
 -- --------------------------------------------------------
@@ -286,7 +290,13 @@ INSERT INTO `transaksi` (`no_transaksi`, `date`, `total`, `id_user`) VALUES
 (8, '2020-04-22', 945000, 1),
 (9, '2020-05-27', 1890000, 1),
 (10, '2020-06-26', 1730000, 1),
-(11, '2020-07-10', 1105000, 1);
+(11, '2020-07-10', 1105000, 1),
+(12, '2020-02-14', 2340000, 1),
+(13, '2020-03-24', 1560000, 1),
+(14, '2020-04-24', 3030000, 1),
+(15, '2020-05-15', 2250000, 1),
+(16, '2020-06-10', 2220000, 1),
+(17, '2020-07-14', 3750000, 1);
 
 -- --------------------------------------------------------
 
@@ -421,13 +431,13 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -457,7 +467,7 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
